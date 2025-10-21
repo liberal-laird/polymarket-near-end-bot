@@ -17,7 +17,7 @@
 - uv 包管理器（推荐）
 - 有效的Polymarket账户
 - USDC余额用于交易
-- MATIC余额用于Gas费用
+
 
 ## 🛠️ 快速开始
 
