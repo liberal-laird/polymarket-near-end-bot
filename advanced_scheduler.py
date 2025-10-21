@@ -203,8 +203,8 @@ class AutoTraderScheduler:
         now = datetime.datetime.now()
         minute = now.minute
         
-        # 在15、30、45、0分钟的前4分钟执行
-        target_minutes = [11, 26, 41, 56]  # 15-4=11, 30-4=26, 45-4=41, 60-4=56
+        # 在15、30、45、0分钟的前5分钟执行
+        target_minutes = [10, 25, 40, 55]  # 15-5=10, 30-5=25, 45-5=40, 60-5=55
         
         return minute in target_minutes
     
@@ -214,7 +214,7 @@ class AutoTraderScheduler:
         minute = now.minute
         
         # 目标执行分钟
-        target_minutes = [11, 26, 41, 56]
+        target_minutes = [10, 25, 40, 55]
         
         # 找到下一个目标时间
         for target in target_minutes:
@@ -222,8 +222,8 @@ class AutoTraderScheduler:
                 next_time = now.replace(minute=target, second=0, microsecond=0)
                 return next_time
         
-        # 如果当前时间已过所有目标，则等到下一个小时的11分钟
-        next_hour = now.replace(hour=now.hour + 1, minute=11, second=0, microsecond=0)
+        # 如果当前时间已过所有目标，则等到下一个小时的10分钟
+        next_hour = now.replace(hour=now.hour + 1, minute=10, second=0, microsecond=0)
         return next_hour
 
     def print_status(self):
@@ -249,7 +249,7 @@ class AutoTraderScheduler:
         self.save_stats()
         
         self.logger.info("🚀 自动交易调度器启动")
-        self.logger.info("📅 执行时间: 每小时11、26、41、56分钟（15、30、45、0分钟前4分钟）")
+        self.logger.info("📅 执行时间: 每小时10、25、40、55分钟（15、30、45、0分钟前5分钟）")
         self.logger.info("🛑 按 Ctrl+C 停止")
         
         try:
