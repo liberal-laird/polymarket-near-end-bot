@@ -1,0 +1,12 @@
+{
+  "interval_minutes": 5,
+  "max_trades": 1,
+  "scan_minutes": 5,
+  "scan_start_minutes": 1,
+  "scan_end_minutes": 6,
+  "min_time_remaining": 1,
+  "test_mode": false,
+  "log_level": "INFO",
+  "max_retries": 3,
+  "retry_delay": 30
+}
