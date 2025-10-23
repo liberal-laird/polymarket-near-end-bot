@@ -222,9 +222,9 @@ class AutoTraderScheduler:
                 next_time = now.replace(minute=target, second=0, microsecond=0)
                 return next_time
         
-        # 如果当前时间已过所有目标，则等到下一个小时的10分钟
-        next_hour = now.replace(hour=now.hour + 1, minute=10, second=0, microsecond=0)
-        return next_hour
+        # 如果当前时间已过所有目标，则等到下一个小时的10分钟（正确处理跨天）
+        next_time = (now + datetime.timedelta(hours=1)).replace(minute=10, second=0, microsecond=0)
+        return next_time
 
     def print_status(self):
         """打印状态信息"""
